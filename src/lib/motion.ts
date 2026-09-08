@@ -51,4 +51,5 @@ export const chipIn: Variants = {
   show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.35, ease: EASE } },
 };
 
-export const viewportOnce = { once: true, amount: 0.25 } as const;
+// once: false → les animations se rejouent à chaque entrée/sortie du viewport
+export const viewportOnce = { once: false, amount: 0.2 } as const;

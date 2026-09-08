@@ -25,66 +25,65 @@ export type Project = {
 export const profile = {
   name: "Mohamed Aziz Said",
   shortName: "MED AZIZ SAID",
-  role: "Full-Stack Software Engineer",
+  role: "Full-Stack Engineer · AI & DevOps Enthusiast",
   status: "Final-year engineering student · ESPRIT",
   valueProp:
-    "Building production-grade full-stack systems — from JWT-authenticated LMS platforms to real-time nutrition assistants.",
+    "I build production-ready software across the stack — combining full-stack engineering, AI-powered experiences, and DevOps practices to turn ideas into reliable products.",
   about:
-    "4th-year engineering student specializing in Software Engineering at the Private Higher School of Engineering and Technology (ESPRIT). Currently completing a 6-month internship at CERT. Skilled at applying agile practice, technical rigor, and a drive to contribute innovative software projects.",
-  email: "MohamedAziz.Said@esprit.tn",
-  github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
-  resume: "#", // Drop resume.pdf into /public and point this to /resume.pdf
+    "I'm a software engineering student at ESPRIT passionate about building modern, reliable, and intelligent applications. I work across Full-Stack development, AI integration, and DevOps, turning ideas into real-world software.",
+  email: "azizsaid.it@gmail.com",
+  github: "https://github.com/mohamedazizsaid",
+  linkedin: "https://www.linkedin.com/in/mohamed-aziz-said-841a3b226",
+  resume: "https://drive.google.com/file/d/1im1IpFSciFRmoluKQKmhxAWMtm7ycq1G/view?usp=drive_link", // Drop resume.pdf into /public and point this to /resume.pdf
   location: "Tunis, Tunisia",
 };
 
 export const experiences: Experience[] = [
   {
-    company: "RoyalTyre",
-    role: "Full-Stack Intern — Inventory Management System",
-    period: "07/2025 – 09/2025",
-    location: "Tunis",
+    company: "Bee Coders",
+    role: "Full-Stack Engineer — Centralized Learning & Internship Platform (9antra-The Bridge)",
+    period: "06/2026 – 08/2026",
+    location: "Lac I, Tunisie",
     bullets: [
-      "Built a full-stack solution for tire distribution using React.js, Express.js and MongoDB.",
-      "Implemented modules for tracking products, supplies and warehouse data.",
-      "Enhanced performance and streamlined a seamless user experience for daily operations.",
+"Designed and developed a centralized platform for managing training programs, internships and learner progression using Angular, Spring Boot and MySQL.", "Implemented secure RBAC, phase-gated workflows, payment validation and real-time notifications to streamline collaboration between learners and trainers.", "Integrated automated certificate generation with blockchain anchoring to provide verifiable and tamper-evident credentials.",
     ],
-    stack: ["React.js", "Express.js", "MongoDB"],
+    stack: ["Angular", "Spring Boot", "MySQL", "WebSocket", "Blockchain","Stripe", "CI/CD & DevOps", "Vercel", "Render"],
   },
   {
-    company: "MyEdTech",
+    company: "YottaByte",
     role: "Full-Stack Intern — Advanced E-Learning Platform",
-    period: "01/2024 – 05/2024",
-    location: "Tunis",
+    period: "01/2024 – 06/2024",
+    location: "Charguia, Tunisie",
     bullets: [
-      "Developed an AI-authenticated learning platform using Angular, Node.js and MongoDB.",
+      "Developed an AI-authenticated learning platform using Angular, Express.js and MongoDB.",
       "Integrated intelligent chatbots to assist users and enhance learning interaction.",
       "Delivered a more advanced and responsive platform compared to existing local solutions.",
     ],
-    stack: ["Angular", "Node.js", "MongoDB"],
+    stack: ["Angular", "Express.js", "MongoDB","Figma", "Trello"],
   },
   {
     company: "CERT",
-    role: "Full-Stack Intern — Advanced E-Learning Platform",
+    role: "Full-Stack Intern — Advanced Managing Interns Platform",
     period: "01/2023 – 03/2023",
-    location: "Tunis",
+    location: "Technopole Elgazala, Tunisie",
     bullets: [
       "Designed and developed a complete platform for managing interns using Angular, Spring Boot and MySQL.",
       "Implemented features for tracking intern tasks, attendance and performance.",
       "Focused on creating a user-friendly dashboard and secure authentication system.",
     ],
-    stack: ["Angular", "Spring Boot", "MySQL"],
+    stack: ["Angular", "Spring Boot", "MySQL", "Git", "GitHub"],
   },
   {
     company: "Sagemcom",
     role: "Software Development Intern",
     period: "01/2022 – 02/2022",
+    location: "Ben Arous, Tunisie",
     bullets: [
       "Joined a professional software development company to observe team workflows and project lifecycles.",
       "Gained exposure to real-world development practices, collaboration and agile methodologies.",
       "Acquired a foundational understanding of teamwork and software project structure.",
     ],
-    stack: ["Agile", "Teamwork"],
+    stack: ["Agile", "Teamwork", "Productivity"],
   },
 ];
 
@@ -168,43 +167,108 @@ export const projects: Project[] = [
   },
 ];
 
+
 export const skillGroups: { title: string; items: string[] }[] = [
   {
     title: "Languages",
-    items: ["Java", "C / C++", "PHP", "Arduino", "JavaScript", "TypeScript", "Dart", "Python"],
-  },
-  {
-    title: "Frameworks",
     items: [
-      "Angular",
-      "JavaFX",
-      "Symfony",
-      "Flask",
-      ".NET",
-      "Streamlit",
-      "React JS",
-      "Express JS",
-      "Vue JS",
-      "Django",
+      "Java",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "PHP",
+      "C / C++",
+      "Dart",
+      "SQL",
     ],
   },
   {
-    title: "DevOps & Tools",
-    items: ["Git", "GitHub", "Postman", "Docker", "Jenkins", "JMeter", "VS Code", "Maven"],
+    title: "Frontend",
+    items: [
+      "Angular",
+      "React",
+      "Vue.js",
+      "Next.js",
+      "JavaFX",
+      "Bootstrap",
+    ],
   },
   {
-    title: "Libraries",
-    items: ["Spring Cloud", "Entity Framework", "Angular Libraries", "Bootstrap", "Puppeteer"],
+    title: "Backend",
+    items: [
+      "Spring Boot",
+      "Spring Cloud",
+      "Symfony",
+      "Django",
+      "Flask",
+      "Express.js",
+      ".NET",
+      "NestJS",
+      "REST APIs",
+      "Microservices",
+    ],
+  },
+  {
+    title: "DevOps & Cloud",
+    items: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Jenkins",
+      "Kubernetes",
+      "SonarQube",
+      "Ansible",
+      "Nginx",
+      "AWS",
+      "Azure",
+      "Vercel",
+      "Render",
+    ],
   },
   {
     title: "Databases",
-    items: ["MySQL", "MongoDB", "Firebase", "PostgreSQL"],
+    items: [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Firebase",
+      "Supabase",
+      "TiDB",
+      "SQL",
+      "NoSQL",
+    ],
   },
   {
-    title: "Architecture & Practices",
-    items: ["REST APIs", "Microservices", "MVC", "AI/ML integration", "Agile"],
+    title: "Testing & Tools",
+    items: [
+      "JUnit",
+      "Postman",
+      "JMeter",
+      "Maven",
+      "VS Code",
+      "IntelliJ IDEA",
+      "API Testing",
+      "Performance Testing",
+      "Figma"
+    ],
+  },
+  {
+    title: "Architecture & AI",
+    items: [
+      "Microservices",
+      "MVC",
+      "Clean Architecture",
+      "Design Patterns",
+      "OOP",
+      "Agile",
+      "Scrum",
+      "Machine Learning",
+      "AI/ML Integration",
+      "AI APIs Integration",
+    ],
   },
 ];
+
 
 export const education = [
   {
