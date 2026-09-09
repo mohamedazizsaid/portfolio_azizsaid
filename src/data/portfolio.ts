@@ -7,6 +7,23 @@ export type Experience = {
   stack: string[];
 };
 
+export type RepoLink = {
+  label: string;
+  url: string;
+};
+
+export type ProjectRepos =
+  | RepoLink[]
+  | {
+    frontend?: string;
+    backend?: string;
+    client?: string;
+    server?: string;
+    api?: string;
+    mobile?: string;
+    [key: string]: string | undefined;
+  };
+
 export type Project = {
   id: string;
   name: string;
@@ -17,10 +34,48 @@ export type Project = {
   impact: string;
   highlights: string[];
   stack: string[];
-  // Real repository links are unknown — replace "#" with the GitHub URL when available.
-  repo: string;
+  repo?: string;
+  repos?: ProjectRepos;
+  live?: string;
   year: string;
 };
+
+const formatRepoLabel = (key: string): string => {
+  const lower = key.toLowerCase();
+  if (lower === "front") return "Frontend";
+  if (lower === "back") return "Backend";
+  return key.charAt(0).toUpperCase() + key.slice(1);
+};
+
+export function getProjectRepos(project: Project): RepoLink[] {
+  if (Array.isArray(project.repos)) {
+    return project.repos.filter((r) => Boolean(r && r.url && r.url !== "#"));
+  }
+  if (project.repos && typeof project.repos === "object") {
+    return Object.entries(project.repos)
+      .filter(([_, url]) => Boolean(url && url !== "#"))
+      .map(([label, url]) => ({
+        label: formatRepoLabel(label),
+        url: url as string,
+      }));
+  }
+  if (project.repo && project.repo !== "#") {
+    return [{ label: "Code", url: project.repo }];
+  }
+  return [];
+}
+
+export function getProjectLiveUrl(project: Project): string | null {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const p = project as any;
+  const url = p.live || p.prod || p.demo || p.production;
+  if (typeof url === "string" && url !== "#" && url.trim() !== "") {
+    return url.trim();
+  }
+  return null;
+}
+
+
 
 export const profile = {
   name: "Mohamed Aziz Said",
@@ -45,9 +100,9 @@ export const experiences: Experience[] = [
     period: "06/2026 – 08/2026",
     location: "Lac I, Tunisie",
     bullets: [
-"Designed and developed a centralized platform for managing training programs, internships and learner progression using Angular, Spring Boot and MySQL.", "Implemented secure RBAC, phase-gated workflows, payment validation and real-time notifications to streamline collaboration between learners and trainers.", "Integrated automated certificate generation with blockchain anchoring to provide verifiable and tamper-evident credentials.",
+      "Designed and developed a centralized platform for managing training programs, internships and learner progression using Angular, Spring Boot and MySQL.", "Implemented secure RBAC, phase-gated workflows, payment validation and real-time notifications to streamline collaboration between learners and trainers.", "Integrated automated certificate generation with blockchain anchoring to provide verifiable and tamper-evident credentials.",
     ],
-    stack: ["Angular", "Spring Boot", "MySQL", "WebSocket", "Blockchain","Stripe", "CI/CD & DevOps", "Vercel", "Render"],
+    stack: ["Angular", "Spring Boot", "MySQL", "WebSocket", "Blockchain", "Stripe", "CI/CD & DevOps", "Vercel", "Render"],
   },
   {
     company: "YottaByte",
@@ -59,7 +114,7 @@ export const experiences: Experience[] = [
       "Integrated intelligent chatbots to assist users and enhance learning interaction.",
       "Delivered a more advanced and responsive platform compared to existing local solutions.",
     ],
-    stack: ["Angular", "Express.js", "MongoDB","Figma", "Trello"],
+    stack: ["Angular", "Express.js", "MongoDB", "Figma", "Trello"],
   },
   {
     company: "CERT",
@@ -88,12 +143,13 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [
+
   {
     id: "9antra",
     name: "9antra — The Bridge",
     tagline: "Full-stack LMS for Tunisian vocational training centers.",
-    badge: "Most complex system architecture",
-    year: "2025",
+    badge: "Most immersive UI/UX",
+    year: "2026",
     problem:
       "Vocational training centers had no single system tying together enrollment, payment confirmation, pedagogical validation and credential issuance.",
     solution:
@@ -106,8 +162,88 @@ export const projects: Project[] = [
       "Blockchain certificate anchoring on Polygon L2 with automatic generation",
       "Real-time notifications over WebSocket (STOMP / SockJS)",
     ],
-    stack: ["Spring Boot", "Angular", "MySQL", "WebSocket", "Blockchain"],
-    repo: "#",
+    stack: ["Spring Boot", "Angular", "MySQL", "WebSocket", "WCAG AA", "Blockchain", "CI/CD & DevOps", "Vercel", "Render"],
+    repos: {
+      front: "https://github.com/mohamedazizsaid/9antra_the-Bridge_Frontend",
+      back: "https://github.com/mohamedazizsaid/9antra_the-Bridge_Frontend",
+    },
+    live: "https://9antra-the-bridge-frontend-pdjd-silk.vercel.app",
+
+  },
+  {
+    id: "deepskyn",
+    name: "DeepSkyn",
+    tagline: "AI-powered skin analysis platform with accessibility-first design.",
+    badge: "Most complex system architecture",
+    year: "2026",
+    problem:
+      "Users lacked an accessible, trustworthy way to get AI-driven skin analysis with real-time guidance, especially across language and ability barriers.",
+    solution:
+      "A React/Vite + NestJS platform with Keycloak auth, PostgreSQL, and Python ML services for skin analysis, wrapped in a dark luxury/biopunk UI with glassmorphism and 3D animations, plus a multi-provider LLM fallback layer for resilience.",
+    impact:
+      "Delivers AI skin diagnostics with built-in accessibility (LSF sign language avatar, eye tracking, voice commands) and automated billing/support flows, deployed across web and mobile.",
+    highlights: [
+      "React/Vite · NestJS · PostgreSQL · Keycloak auth · Python ML services",
+      "Accessibility suite: LSF sign language avatar (Mixamo/Three.js), eye tracking, voice commands",
+      "Stripe billing, n8n automation, multi-provider LLM fallback (Gemini, Groq, OpenRouter)",
+      "React Native/Expo companion app · CI/CD across Render/Vercel/Supabase",
+    ],
+    stack: ["React", "NestJS", "PostgreSQL", "Keycloak", "Python", "React Native", "WCAG AA", "CI/CD & DevOps", "Vercel", "Supabase", "Azure"],
+    repos: {
+      front: "https://github.com/mohamedazizsaid/DeepSkynFrontEnd_ByDev-Masters",
+      back: "https://github.com/MohamedSalimLabbaoui/DeepSkynBackEnd_ByDev-Masters",
+      mobile: "https://github.com/mohamedazizsaid/DeepSkynMobile_ByDev-Masters"
+    },
+    live: "https://deep-skyn-front-end-by-dev-masters.vercel.app",
+  },
+  {
+    id: "formapro",
+    name: "FormaPro",
+    tagline: "Accessible, AI-powered training management platform built for MaraTech Esprit 2026.",
+    badge: "Most accessible platform",
+    year: "2026",
+    problem:
+      "Vocational training centers needed a single platform to manage the full training lifecycle — from enrollment to certification — while remaining usable for trainers and learners with different accessibility needs.",
+    solution:
+      "A NestJS/MongoDB Atlas backend paired with a React/Vite frontend, deployed on Render (API) and Vercel (frontend), supporting three role-based dashboards (Formateur, Responsable Formation, Administrateur), an AI chatbot assistant powered by Gemini 2.5 Flash, and an accessibility suite including eye tracking and Face ID-based attendance, built with the team in 48 hours for MaraTech Esprit 2026.",
+    impact:
+      "Automates enrollment, attendance (including facial-recognition check-in), PDF certificate generation, and analytics across roles, while meeting WCAG 2.1 AA accessibility standards with hands-free control options.",
+    highlights: [
+      "NestJS · MongoDB Atlas · React 18 · Vite · Tailwind CSS · shadcn/ui",
+      "Deployed on Render (backend) + Vercel (frontend) with MongoDB Atlas as the managed database",
+      "JWT + Google OAuth 2.0 auth with TOTP 2FA (QR code enable/verify/disable)",
+      "AI chatbot assistant via Google Gemini 2.5 Flash with persistent chat history",
+      "Face ID attendance: facial recognition check-in (face-api.js) alongside eye tracking and eye-blink click controls",
+      "Automatic PDF certificate generation (PDFKit), Cloudinary media, multilingual UI (FR/EN/AR/ES)",
+      "Global HTTP audit logging and role-based analytics dashboards (Recharts)",
+    ],
+    stack: ["NestJS", "MongoDB Atlas", "React", "Vite", "TailwindCSS", "Gemini AI"],
+    repo:"https://github.com/mohamedazizsaid/EspritMaratch2026-devmasters",
+    live:"https://esprit-maratch2026-devmasters.vercel.app/"
+  },
+  {
+    id: "quality-detection",
+    name: "Quality Detection — StopAlgic",
+    tagline: "Computer vision defect detection on the bottle production line.",
+    year: "2024",
+    badge: "Most industrial application",
+    problem:
+      "Manual visual inspection on the bottling line let defective products (broken bottles, damaged caps, misapplied labels) slip through before shipment and scaled poorly with volume.",
+    solution:
+      "A multi-model computer vision system (YOLO/CNN trained per defect type — bottle breakage, cap, label) served through an OpenCV real-time video pipeline, backed by an authenticated Python API with database logging, plus a Flutter companion app for monitoring.",
+    impact: "Automated real-time quality control across multiple defect categories, reducing manual inspection error.",
+    highlights: [
+      "Multiple trained detection models: bottle breakage (cassure), cap (bouchon), label (étiquette)",
+      "Real-time video anomaly detection pipeline built on OpenCV",
+      "Python backend with authentication and database logging of detections",
+      "Flutter cross-platform companion app (Android/iOS/desktop/web) for monitoring",
+      "Automated quality control, reducing manual inspection error",
+    ],
+    stack: ["Python", "TensorFlow", "PyTorch", "OpenCV", "YOLO", "Flutter"],
+    repos: {
+      mobile: "https://github.com/mohamedazizsaid/StopAlgic-Camera-Intelligent-Flutter-Application",
+      back: "https://github.com/mohamedazizsaid/StopAlgic-Camera-Intelligent",
+    },
   },
   {
     id: "nutripal",
@@ -129,41 +265,29 @@ export const projects: Project[] = [
     stack: ["Angular", "Spring Boot", "AI/ML", "MySQL"],
     repo: "#",
   },
+
+
   {
-    id: "quality-detection",
-    name: "AI-Powered Product Quality Detection",
-    tagline: "Computer vision defect detection on the production line.",
-    year: "2024",
+    id: "educonnect",
+    name: "EduConnect",
+    tagline: "AI- and blockchain-powered education management ecosystem.",
+    badge: "Most ambitious monorepo",
+    year: "2025",
     problem:
-      "Manual visual inspection let defective products slip through before shipment and scaled poorly with volume.",
+      "Students, teachers, and institutions lacked a unified platform for course management, personalized learning, and certificate credentials that are trustworthy and easy to verify.",
     solution:
-      "A convolutional model trained with Keras/TensorFlow and served through an OpenCV pipeline that scores frames in real time and flags defects for removal.",
-    impact: "Automated real-time quality control, reducing manual inspection error.",
+      "A four-service monorepo: a Flutter mobile client, a Node.js/Express/MongoDB backend for auth and core data, a Python (FastAPI/Flask, Scikit-learn) AI engine for personalized course recommendations, and Solidity/Hardhat smart contracts anchoring certificates on-chain.",
+    impact:
+      "Gives students personalized course recommendations and tamper-proof, globally verifiable academic certificates, while giving teachers and institutions a shared system for courses, assignments, grades, and resources.",
     highlights: [
-      "Computer vision model detecting defective products before shipment",
-      "Real-time frame scoring pipeline built on OpenCV",
-      "Automated quality control, reducing manual inspection error",
+      "Flutter (Riverpod, Dio) cross-platform mobile app for iOS/Android/Web",
+      "Node.js/Express/MongoDB REST API with JWT authentication",
+      "Python AI engine (FastAPI/Flask, Scikit-learn) for personalized course recommendations",
+      "Solidity smart contracts (Hardhat) for immutable, blockchain-anchored certification",
+      "Dockerized local setup across all four services",
     ],
-    stack: ["Python", "TensorFlow", "Keras", "OpenCV", "AI/ML"],
-    repo: "#",
-  },
-  {
-    id: "smart-elearning",
-    name: "Smart E-Learning Platform",
-    tagline: "Adaptive learning with AI-driven course recommendations.",
-    year: "2023",
-    problem:
-      "Static course catalogs give every student the same path regardless of pace or assessment results.",
-    solution:
-      "A Symfony backend paired with a JavaFX desktop client where an ML recommender re-ranks courses from assessment signals and surfaces them on a personalized dashboard.",
-    impact: "Students receive a path adapted to their measured level rather than a fixed catalog order.",
-    highlights: [
-      "Adaptive learning with AI-driven course recommendations",
-      "Personalized dashboard and student assessment tools",
-      "Symfony + JavaFX + MySQL architecture",
-    ],
-    stack: ["Symfony", "JavaFX", "MySQL", "AI/ML"],
-    repo: "#",
+    stack: ["Flutter", "Express.js", "MongoDB", "Python", "Docker"],
+    repo: "https://github.com/mohamedazizsaid/EduuConnect",
   },
 ];
 
@@ -205,7 +329,6 @@ export const skillGroups: { title: string; items: string[] }[] = [
       ".NET",
       "NestJS",
       "REST APIs",
-      "Microservices",
     ],
   },
   {

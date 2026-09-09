@@ -16,33 +16,19 @@ globalThis.__nitro_vite_envs__ = services;
 //#endregion
 //#region #nitro/virtual/public-assets-data
 var public_assets_data_default = {
-	"/assets/index-Dy0t5GDm.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"54c41-3+5pe4Me0LjWCzXZC1V2BWqYLgI\"",
-		"mtime": "2026-08-30T16:18:20.138Z",
-		"size": 347201,
-		"path": "../public/assets/index-Dy0t5GDm.js"
+	"/assets/aziz-AdZGcbzS.png": {
+		"type": "image/png",
+		"etag": "\"2d1e8-4vFg1wjASkYjh+NGkmLpuxnuQHs\"",
+		"mtime": "2026-09-09T12:33:25.402Z",
+		"size": 184808,
+		"path": "../public/assets/aziz-AdZGcbzS.png"
 	},
-	"/assets/routes-BkLea3wq.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"38992-0fxz8H9/CUsigWVQ+0VFjAAAdsw\"",
-		"mtime": "2026-08-30T16:18:20.139Z",
-		"size": 231826,
-		"path": "../public/assets/routes-BkLea3wq.js"
-	},
-	"/assets/styles-90rNQt_M.css": {
+	"/assets/styles-CLPLxAII.css": {
 		"type": "text/css; charset=utf-8",
-		"etag": "\"15825-yTlGhUSAcYCw50Kx3b3ci6+kfYA\"",
-		"mtime": "2026-08-30T16:18:20.139Z",
-		"size": 88101,
-		"path": "../public/assets/styles-90rNQt_M.css"
-	},
-	"/favicon.svg": {
-		"type": "image/svg+xml",
-		"etag": "\"2532-P1u486agW3ymimJYHS3VvIiBLK8\"",
-		"mtime": "2026-08-30T15:35:02.311Z",
-		"size": 9522,
-		"path": "../public/favicon.svg"
+		"etag": "\"163b3-cd7ecAVUrDyMBLCmLyhryJODYQo\"",
+		"mtime": "2026-09-09T12:33:25.403Z",
+		"size": 91059,
+		"path": "../public/assets/styles-CLPLxAII.css"
 	},
 	"/icons.svg": {
 		"type": "image/svg+xml",
@@ -50,6 +36,27 @@ var public_assets_data_default = {
 		"mtime": "2026-08-30T15:35:02.329Z",
 		"size": 5031,
 		"path": "../public/icons.svg"
+	},
+	"/assets/index-BWYxxrtP.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"54c41-y+BTgxGAug0EwQqbBU5r3smB6CI\"",
+		"mtime": "2026-09-09T12:33:25.400Z",
+		"size": 347201,
+		"path": "../public/assets/index-BWYxxrtP.js"
+	},
+	"/assets/routes-CWcGMj_L.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"50c19-4nD+GemE/iE+natr4Vhl47XdctM\"",
+		"mtime": "2026-09-09T12:33:25.401Z",
+		"size": 330777,
+		"path": "../public/assets/routes-CWcGMj_L.js"
+	},
+	"/favicon.svg": {
+		"type": "image/svg+xml",
+		"etag": "\"2532-P1u486agW3ymimJYHS3VvIiBLK8\"",
+		"mtime": "2026-08-30T15:35:02.311Z",
+		"size": 9522,
+		"path": "../public/favicon.svg"
 	}
 };
 //#endregion
@@ -87,11 +94,11 @@ var findRouteRules = /* @__PURE__ */ (() => {
 		return r;
 	};
 })();
-var _lazy_AJ3YNL = defineLazyEventHandler(() => import("./_chunks/ssr-renderer.mjs"));
+var _lazy_5B2bBb = defineLazyEventHandler(() => import("./_chunks/ssr-renderer.mjs"));
 var findRoute = /* @__PURE__ */ (() => {
 	const data = {
 		route: "/**",
-		handler: _lazy_AJ3YNL
+		handler: _lazy_5B2bBb
 	};
 	return ((_m, p) => {
 		return {

@@ -3,10 +3,11 @@ import { a as useMotionValueEvent, i as useScroll, n as useSpring, r as useTrans
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { n as toast, t as Toaster } from "../_libs/sonner.mjs";
 import { t as motion } from "../_libs/motion.mjs";
-import { a as Mail, c as ArrowUpRight, i as Menu, l as ArrowDown, n as Sun, o as Linkedin, r as Moon, s as Github, t as X } from "../_libs/lucide-react.mjs";
+import { _ as CodeXml, a as Smartphone, b as ArrowUpRight, c as Moon, d as Linkedin, f as Layers, g as Database, h as Gauge, i as Sparkles, l as Menu, m as Github, n as Workflow, o as ShieldCheck, p as Globe, r as Sun, s as Server, t as X, u as Mail, v as Brain, x as ArrowDown, y as Boxes } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BBewPlAy.js
+import { $ as SiTypescript, A as SiMongodb, B as SiPython, C as SiIntellijidea, D as SiKeras, E as SiJunit5, F as SiOpencv, G as SiSpring, H as SiRender, I as SiPhp, J as SiSymfony, K as SiStripe, L as SiPolygon, M as SiNestjs, N as SiNextdotjs, O as SiKeycloak, P as SiNginx, Q as SiTrello, R as SiPostgresql, S as SiGooglegemini, T as SiJenkins, U as SiSocketdotio, V as SiReact, W as SiSonar, X as SiTensorflow, Y as SiTailwindcss, Z as SiTidb, _ as SiFirebase, a as SiAngular, b as SiGithub, c as SiApachemaven, d as SiDart, et as SiVercel, f as SiDjango, g as SiFigma, h as SiExpress, i as FaJava, j as SiMysql, k as SiKubernetes, l as SiBootstrap, m as SiDotnet, n as VscCode, nt as SiVuedotjs, o as SiAnsible, p as SiDocker, q as SiSupabase, r as FaAws, s as SiApachejmeter, t as VscAzure, tt as SiVite, u as SiCplusplus, v as SiFlask, w as SiJavascript, x as SiGithubactions, y as SiGit, z as SiPostman } from "../_libs/react-icons.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-TCQDqzZA.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Toaster$1 = ({ ...props }) => {
@@ -21,57 +22,93 @@ var Toaster$1 = ({ ...props }) => {
 		...props
 	});
 };
+var formatRepoLabel = (key) => {
+	const lower = key.toLowerCase();
+	if (lower === "front" || lower === "frontend") return "Frontend";
+	if (lower === "back" || lower === "backend") return "Backend";
+	if (lower === "mobile" || lower === "mobileapp" || lower === "mobile_app" || lower === "app") return "Mobile";
+	if (lower === "client") return "Client";
+	if (lower === "server") return "Server";
+	if (lower === "api") return "API";
+	return key.charAt(0).toUpperCase() + key.slice(1);
+};
+function getProjectRepos(project) {
+	if (Array.isArray(project.repos)) return project.repos.filter((r) => Boolean(r && r.url && r.url !== "#"));
+	if (project.repos && typeof project.repos === "object") return Object.entries(project.repos).filter(([_, url]) => Boolean(url && url !== "#")).map(([label, url]) => ({
+		label: formatRepoLabel(label),
+		url
+	}));
+	if (project.repo && project.repo !== "#") return [{
+		label: "Code",
+		url: project.repo
+	}];
+	return [];
+}
+function getProjectLiveUrl(project) {
+	const p = project;
+	const url = p.live || p.prod || p.demo || p.production;
+	if (typeof url === "string" && url !== "#" && url.trim() !== "") return url.trim();
+	return null;
+}
 var profile = {
 	name: "Mohamed Aziz Said",
 	shortName: "MED AZIZ SAID",
-	role: "Full-Stack Software Engineer",
+	role: "Full-Stack Engineer · AI & DevOps Enthusiast",
 	status: "Final-year engineering student · ESPRIT",
-	valueProp: "Building production-grade full-stack systems — from JWT-authenticated LMS platforms to real-time nutrition assistants.",
-	about: "4th-year engineering student specializing in Software Engineering at the Private Higher School of Engineering and Technology (ESPRIT). Currently completing a 6-month internship at CERT. Skilled at applying agile practice, technical rigor, and a drive to contribute innovative software projects.",
-	email: "MohamedAziz.Said@esprit.tn",
-	github: "https://github.com/",
-	linkedin: "https://www.linkedin.com/",
-	resume: "#",
+	valueProp: "I build production-ready software across the stack — combining full-stack engineering, AI-powered experiences, and DevOps practices to turn ideas into reliable products.",
+	about: "I'm a software engineering student at ESPRIT passionate about building modern, reliable, and intelligent applications. I work across Full-Stack development, AI integration, and DevOps, turning ideas into real-world software.",
+	email: "azizsaid.it@gmail.com",
+	github: "https://github.com/mohamedazizsaid",
+	linkedin: "https://www.linkedin.com/in/mohamed-aziz-said-841a3b226",
+	resume: "https://drive.google.com/file/d/1im1IpFSciFRmoluKQKmhxAWMtm7ycq1G/view?usp=drive_link",
 	location: "Tunis, Tunisia"
 };
 var experiences = [
 	{
-		company: "RoyalTyre",
-		role: "Full-Stack Intern — Inventory Management System",
-		period: "07/2025 – 09/2025",
-		location: "Tunis",
+		company: "Bee Coders",
+		role: "Full-Stack Engineer — Centralized Learning & Internship Platform (9antra-The Bridge)",
+		period: "06/2026 – 08/2026",
+		location: "Lac I, Tunisie",
 		bullets: [
-			"Built a full-stack solution for tire distribution using React.js, Express.js and MongoDB.",
-			"Implemented modules for tracking products, supplies and warehouse data.",
-			"Enhanced performance and streamlined a seamless user experience for daily operations."
+			"Designed and developed a centralized platform for managing training programs, internships and learner progression using Angular, Spring Boot and MySQL.",
+			"Implemented secure RBAC, phase-gated workflows, payment validation and real-time notifications to streamline collaboration between learners and trainers.",
+			"Integrated automated certificate generation with blockchain anchoring to provide verifiable and tamper-evident credentials."
 		],
 		stack: [
-			"React.js",
-			"Express.js",
-			"MongoDB"
+			"Angular",
+			"Spring Boot",
+			"MySQL",
+			"WebSocket",
+			"Blockchain",
+			"Stripe",
+			"CI/CD & DevOps",
+			"Vercel",
+			"Render"
 		]
 	},
 	{
-		company: "MyEdTech",
+		company: "YottaByte",
 		role: "Full-Stack Intern — Advanced E-Learning Platform",
-		period: "01/2024 – 05/2024",
-		location: "Tunis",
+		period: "01/2024 – 06/2024",
+		location: "Charguia, Tunisie",
 		bullets: [
-			"Developed an AI-authenticated learning platform using Angular, Node.js and MongoDB.",
+			"Developed an AI-authenticated learning platform using Angular, Express.js and MongoDB.",
 			"Integrated intelligent chatbots to assist users and enhance learning interaction.",
 			"Delivered a more advanced and responsive platform compared to existing local solutions."
 		],
 		stack: [
 			"Angular",
-			"Node.js",
-			"MongoDB"
+			"Express.js",
+			"MongoDB",
+			"Figma",
+			"Trello"
 		]
 	},
 	{
 		company: "CERT",
-		role: "Full-Stack Intern — Advanced E-Learning Platform",
+		role: "Full-Stack Intern — Advanced Managing Interns Platform",
 		period: "01/2023 – 03/2023",
-		location: "Tunis",
+		location: "Technopole Elgazala, Tunisie",
 		bullets: [
 			"Designed and developed a complete platform for managing interns using Angular, Spring Boot and MySQL.",
 			"Implemented features for tracking intern tasks, attendance and performance.",
@@ -80,19 +117,26 @@ var experiences = [
 		stack: [
 			"Angular",
 			"Spring Boot",
-			"MySQL"
+			"MySQL",
+			"Git",
+			"GitHub"
 		]
 	},
 	{
 		company: "Sagemcom",
 		role: "Software Development Intern",
 		period: "01/2022 – 02/2022",
+		location: "Ben Arous, Tunisie",
 		bullets: [
 			"Joined a professional software development company to observe team workflows and project lifecycles.",
 			"Gained exposure to real-world development practices, collaboration and agile methodologies.",
 			"Acquired a foundational understanding of teamwork and software project structure."
 		],
-		stack: ["Agile", "Teamwork"]
+		stack: [
+			"Agile",
+			"Teamwork",
+			"Productivity"
+		]
 	}
 ];
 var projects = [
@@ -100,8 +144,8 @@ var projects = [
 		id: "9antra",
 		name: "9antra — The Bridge",
 		tagline: "Full-stack LMS for Tunisian vocational training centers.",
-		badge: "Most complex system architecture",
-		year: "2025",
+		badge: "Most immersive UI/UX",
+		year: "2026",
 		problem: "Vocational training centers had no single system tying together enrollment, payment confirmation, pedagogical validation and credential issuance.",
 		solution: "A modular Spring Boot 3 / Angular 18 platform with phase-gated progression: a learner advances only when both pedagogical validation and payment confirmation are recorded, with certificates anchored on-chain.",
 		impact: "Centers issue tamper-evident certificates automatically and track cohort progression in real time instead of via spreadsheets.",
@@ -116,9 +160,80 @@ var projects = [
 			"Angular",
 			"MySQL",
 			"WebSocket",
-			"Blockchain"
+			"WCAG AA",
+			"Blockchain",
+			"CI/CD & DevOps",
+			"Vercel",
+			"Render"
 		],
-		repo: "#"
+		repos: {
+			front: "https://github.com/mohamedazizsaid/9antra_the-Bridge_Frontend",
+			back: "https://github.com/mohamedazizsaid/9antra_the-Bridge_Frontend"
+		},
+		live: "https://9antra-the-bridge-frontend-pdjd-silk.vercel.app"
+	},
+	{
+		id: "deepskyn",
+		name: "DeepSkyn",
+		tagline: "AI-powered skin analysis platform with accessibility-first design.",
+		badge: "Most complex system architecture",
+		year: "2026",
+		problem: "Users lacked an accessible, trustworthy way to get AI-driven skin analysis with real-time guidance, especially across language and ability barriers.",
+		solution: "A React/Vite + NestJS platform with Keycloak auth, PostgreSQL, and Python ML services for skin analysis, wrapped in a dark luxury/biopunk UI with glassmorphism and 3D animations, plus a multi-provider LLM fallback layer for resilience.",
+		impact: "Delivers AI skin diagnostics with built-in accessibility (LSF sign language avatar, eye tracking, voice commands) and automated billing/support flows, deployed across web and mobile.",
+		highlights: [
+			"React/Vite · NestJS · PostgreSQL · Keycloak auth · Python ML services",
+			"Accessibility suite: LSF sign language avatar (Mixamo/Three.js), eye tracking, voice commands",
+			"Stripe billing, n8n automation, multi-provider LLM fallback (Gemini, Groq, OpenRouter)",
+			"React Native/Expo companion app · CI/CD across Render/Vercel/Supabase"
+		],
+		stack: [
+			"React",
+			"NestJS",
+			"PostgreSQL",
+			"Keycloak",
+			"Python",
+			"React Native",
+			"WCAG AA",
+			"CI/CD & DevOps",
+			"Vercel",
+			"Supabase",
+			"Azure"
+		],
+		repos: {
+			front: "https://github.com/mohamedazizsaid/DeepSkynFrontEnd_ByDev-Masters",
+			back: "https://github.com/MohamedSalimLabbaoui/DeepSkynBackEnd_ByDev-Masters",
+			mobile: "https://github.com/mohamedazizsaid/DeepSkynMobile_ByDev-Masters"
+		},
+		live: "https://deep-skyn-front-end-by-dev-masters.vercel.app"
+	},
+	{
+		id: "formapro",
+		name: "FormaPro",
+		tagline: "Accessible, AI-powered training management platform built for MaraTech Esprit 2026.",
+		badge: "Most accessible platform",
+		year: "2026",
+		problem: "Vocational training centers needed a single platform to manage the full training lifecycle — from enrollment to certification — while remaining usable for trainers and learners with different accessibility needs.",
+		solution: "A NestJS/MongoDB Atlas backend paired with a React/Vite frontend, deployed on Render (API) and Vercel (frontend), supporting three role-based dashboards (Formateur, Responsable Formation, Administrateur), an AI chatbot assistant powered by Gemini 2.5 Flash, and an accessibility suite including eye tracking and Face ID-based attendance, built with the team in 48 hours for MaraTech Esprit 2026.",
+		impact: "Automates enrollment, attendance (including facial-recognition check-in), PDF certificate generation, and analytics across roles, while meeting WCAG 2.1 AA accessibility standards with hands-free control options.",
+		highlights: [
+			"NestJS · MongoDB Atlas · React 18 · Vite · Tailwind CSS · shadcn/ui",
+			"Deployed on Render (backend) + Vercel (frontend) with MongoDB Atlas as the managed database",
+			"JWT + Google OAuth 2.0 auth with TOTP 2FA (QR code enable/verify/disable)",
+			"AI chatbot assistant via Google Gemini 2.5 Flash with persistent chat history",
+			"Face ID attendance: facial recognition check-in (face-api.js) alongside eye tracking and eye-blink click controls",
+			"Automatic PDF certificate generation (PDFKit), Cloudinary media, multilingual UI (FR/EN/AR/ES)",
+			"Global HTTP audit logging and role-based analytics dashboards (Recharts)"
+		],
+		stack: [
+			"NestJS",
+			"MongoDB Atlas",
+			"React",
+			"Vite",
+			"TailwindCSS",
+			"Gemini AI"
+		],
+		repos: []
 	},
 	{
 		id: "nutripal",
@@ -191,70 +306,98 @@ var skillGroups = [
 		title: "Languages",
 		items: [
 			"Java",
-			"C / C++",
-			"PHP",
-			"Arduino",
+			"Python",
 			"JavaScript",
 			"TypeScript",
+			"PHP",
+			"C / C++",
 			"Dart",
-			"Python"
+			"SQL"
 		]
 	},
 	{
-		title: "Frameworks",
+		title: "Frontend",
 		items: [
 			"Angular",
+			"React",
+			"Vue.js",
+			"Next.js",
 			"JavaFX",
-			"Symfony",
-			"Flask",
-			".NET",
-			"Streamlit",
-			"React JS",
-			"Express JS",
-			"Vue JS",
-			"Django"
+			"Bootstrap"
 		]
 	},
 	{
-		title: "DevOps & Tools",
+		title: "Backend",
+		items: [
+			"Spring Boot",
+			"Spring Cloud",
+			"Symfony",
+			"Django",
+			"Flask",
+			"Express.js",
+			".NET",
+			"NestJS",
+			"REST APIs",
+			"Microservices"
+		]
+	},
+	{
+		title: "DevOps & Cloud",
 		items: [
 			"Git",
 			"GitHub",
-			"Postman",
 			"Docker",
 			"Jenkins",
-			"JMeter",
-			"VS Code",
-			"Maven"
-		]
-	},
-	{
-		title: "Libraries",
-		items: [
-			"Spring Cloud",
-			"Entity Framework",
-			"Angular Libraries",
-			"Bootstrap",
-			"Puppeteer"
+			"Kubernetes",
+			"SonarQube",
+			"Ansible",
+			"Nginx",
+			"AWS",
+			"Azure",
+			"Vercel",
+			"Render"
 		]
 	},
 	{
 		title: "Databases",
 		items: [
 			"MySQL",
+			"PostgreSQL",
 			"MongoDB",
 			"Firebase",
-			"PostgreSQL"
+			"Supabase",
+			"TiDB",
+			"SQL",
+			"NoSQL"
 		]
 	},
 	{
-		title: "Architecture & Practices",
+		title: "Testing & Tools",
 		items: [
-			"REST APIs",
+			"JUnit",
+			"Postman",
+			"JMeter",
+			"Maven",
+			"VS Code",
+			"IntelliJ IDEA",
+			"API Testing",
+			"Performance Testing",
+			"Figma"
+		]
+	},
+	{
+		title: "Architecture & AI",
+		items: [
 			"Microservices",
 			"MVC",
-			"AI/ML integration",
-			"Agile"
+			"Clean Architecture",
+			"Design Patterns",
+			"OOP",
+			"Agile",
+			"Scrum",
+			"Machine Learning",
+			"AI/ML Integration",
+			"AI APIs Integration"
 		]
 	}
 ];
@@ -573,13 +716,14 @@ var chipIn = {
 	}
 };
 var viewportOnce = {
-	once: true,
-	amount: .25
+	once: false,
+	amount: .2
 };
 var codeLines = [
 	"const engineer = {",
 	"  focus: [\"full-stack\", \"distributed systems\"],",
-	"  now: \"6-month internship @ CERT\",",
+	"  now: \"3-month internship @ BEE CODERS\",",
+	"  learning: [\"DevOps\", \"cloud\", \"AI\"],",
 	"  shipping: true,",
 	"};"
 ];
@@ -808,6 +952,7 @@ function Hero() {
 		]
 	});
 }
+var aziz_default = "/assets/aziz-AdZGcbzS.png";
 var stats = [
 	{
 		value: "4+",
@@ -827,14 +972,43 @@ function About() {
 		id: "about",
 		className: "relative scroll-mt-24 border-y border-border py-24 md:py-28",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mx-auto grid w-full max-w-6xl gap-12 px-6 md:grid-cols-[0.4fr_1fr]",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
-				variants: fadeInUp,
+			className: "mx-auto grid w-full max-w-6xl gap-12 px-6 md:grid-cols-[0.42fr_1fr] md:gap-16",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+				variants: staggerContainer(.1),
 				initial: "hidden",
 				whileInView: "show",
 				viewport: viewportOnce,
-				className: "label-mono",
-				children: "00 / about"
+				className: "flex flex-col gap-8",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+					variants: fadeInUp,
+					className: "label-mono",
+					children: "00 / about"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.figure, {
+					variants: fadeInUp,
+					className: "group relative mx-auto w-full max-w-[15rem] md:mx-0 md:max-w-none",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute -top-3 -left-3 hidden h-16 w-16 border-t border-l border-signal/50 md:block" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute -right-3 -bottom-3 hidden h-16 w-16 border-r border-b border-signal/50 md:block" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "relative aspect-3/4 overflow-hidden rounded-md border border-border bg-surface",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "pointer-events-none absolute inset-0 grid-lines opacity-25" }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+									src: aziz_default,
+									alt: `${profile.name}, ${profile.role}`,
+									loading: "lazy",
+									draggable: false,
+									className: "absolute inset-0 h-full w-full scale-[1.02] object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-background/85 to-transparent" }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("figcaption", {
+									className: "absolute inset-x-0 bottom-0 flex items-center gap-2 px-4 py-3 font-mono text-[0.65rem] tracking-widest text-muted-foreground uppercase",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-signal" }), profile.location]
+								})
+							]
+						})
+					]
+				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
 				variants: staggerContainer(.1),
 				initial: "hidden",
@@ -996,6 +1170,330 @@ function Experience() {
 		})
 	});
 }
+function getSkillIcon(name) {
+	return {
+		Java: {
+			icon: FaJava,
+			color: "#ED8B00"
+		},
+		Python: {
+			icon: SiPython,
+			color: "#3776AB"
+		},
+		JavaScript: {
+			icon: SiJavascript,
+			color: "#F7DF1E"
+		},
+		TypeScript: {
+			icon: SiTypescript,
+			color: "#3178C6"
+		},
+		PHP: {
+			icon: SiPhp,
+			color: "#777BB4"
+		},
+		"C / C++": {
+			icon: SiCplusplus,
+			color: "#00599C"
+		},
+		Dart: {
+			icon: SiDart,
+			color: "#0175C2"
+		},
+		SQL: {
+			icon: Database,
+			color: "#00BCF2"
+		},
+		Angular: {
+			icon: SiAngular,
+			color: "#DD0031"
+		},
+		React: {
+			icon: SiReact,
+			color: "#61DAFB"
+		},
+		"Vue.js": {
+			icon: SiVuedotjs,
+			color: "#4FC08D"
+		},
+		"Next.js": {
+			icon: SiNextdotjs,
+			color: "#FFFFFF"
+		},
+		JavaFX: {
+			icon: FaJava,
+			color: "#ED8B00"
+		},
+		Bootstrap: {
+			icon: SiBootstrap,
+			color: "#7952B3"
+		},
+		"Spring Boot": {
+			icon: SiSpring,
+			color: "#6DB33F"
+		},
+		"Spring Cloud": {
+			icon: SiSpring,
+			color: "#6DB33F"
+		},
+		Symfony: {
+			icon: SiSymfony,
+			color: "#FFFFFF"
+		},
+		Django: {
+			icon: SiDjango,
+			color: "#092E20"
+		},
+		Flask: {
+			icon: SiFlask,
+			color: "#E2E8F0"
+		},
+		"Express.js": {
+			icon: SiExpress,
+			color: "#FFFFFF"
+		},
+		".NET": {
+			icon: SiDotnet,
+			color: "#512BD4"
+		},
+		NestJS: {
+			icon: SiNestjs,
+			color: "#E0234E"
+		},
+		"REST APIs": {
+			icon: Server,
+			color: "#10B981"
+		},
+		Microservices: {
+			icon: Boxes,
+			color: "#F59E0B"
+		},
+		Git: {
+			icon: SiGit,
+			color: "#F05032"
+		},
+		GitHub: {
+			icon: SiGithub,
+			color: "#FFFFFF"
+		},
+		Docker: {
+			icon: SiDocker,
+			color: "#2496ED"
+		},
+		Jenkins: {
+			icon: SiJenkins,
+			color: "#D33833"
+		},
+		Kubernetes: {
+			icon: SiKubernetes,
+			color: "#326CE5"
+		},
+		SonarQube: {
+			icon: SiSonar,
+			color: "#4C9BD6"
+		},
+		Ansible: {
+			icon: SiAnsible,
+			color: "#EE0000"
+		},
+		Nginx: {
+			icon: SiNginx,
+			color: "#009639"
+		},
+		AWS: {
+			icon: FaAws,
+			color: "#FF9900"
+		},
+		Azure: {
+			icon: VscAzure,
+			color: "#0089D6"
+		},
+		Vercel: {
+			icon: SiVercel,
+			color: "#FFFFFF"
+		},
+		Render: {
+			icon: SiRender,
+			color: "#46E3B7"
+		},
+		MySQL: {
+			icon: SiMysql,
+			color: "#4479A1"
+		},
+		PostgreSQL: {
+			icon: SiPostgresql,
+			color: "#336791"
+		},
+		MongoDB: {
+			icon: SiMongodb,
+			color: "#47A248"
+		},
+		Firebase: {
+			icon: SiFirebase,
+			color: "#FFCA28"
+		},
+		Supabase: {
+			icon: SiSupabase,
+			color: "#3ECF8E"
+		},
+		TiDB: {
+			icon: SiTidb,
+			color: "#E30C34"
+		},
+		NoSQL: {
+			icon: Database,
+			color: "#10B981"
+		},
+		JUnit: {
+			icon: SiJunit5,
+			color: "#25A162"
+		},
+		Postman: {
+			icon: SiPostman,
+			color: "#FF6C37"
+		},
+		JMeter: {
+			icon: SiApachejmeter,
+			color: "#D22128"
+		},
+		Maven: {
+			icon: SiApachemaven,
+			color: "#C71A36"
+		},
+		"VS Code": {
+			icon: VscCode,
+			color: "#007ACC"
+		},
+		"IntelliJ IDEA": {
+			icon: SiIntellijidea,
+			color: "#FE315D"
+		},
+		Figma: {
+			icon: SiFigma,
+			color: "#F24E1E"
+		},
+		"API Testing": {
+			icon: ShieldCheck,
+			color: "#10B981"
+		},
+		"Performance Testing": {
+			icon: Gauge,
+			color: "#F59E0B"
+		},
+		MVC: {
+			icon: Layers,
+			color: "#94A3B8"
+		},
+		"Clean Architecture": {
+			icon: Layers,
+			color: "#38BDF8"
+		},
+		"Design Patterns": {
+			icon: Boxes,
+			color: "#A78BFA"
+		},
+		OOP: {
+			icon: CodeXml,
+			color: "#F59E0B"
+		},
+		Agile: {
+			icon: Workflow,
+			color: "#10B981"
+		},
+		Scrum: {
+			icon: Workflow,
+			color: "#10B981"
+		},
+		"Machine Learning": {
+			icon: Brain,
+			color: "#EC4899"
+		},
+		"AI/ML Integration": {
+			icon: Sparkles,
+			color: "#A855F7"
+		},
+		"AI APIs Integration": {
+			icon: Sparkles,
+			color: "#A855F7"
+		},
+		"AI/ML": {
+			icon: Sparkles,
+			color: "#A855F7"
+		},
+		WebSocket: {
+			icon: SiSocketdotio,
+			color: "#010101"
+		},
+		Blockchain: {
+			icon: SiPolygon,
+			color: "#8247E5"
+		},
+		"CI/CD & DevOps": {
+			icon: SiGithubactions,
+			color: "#2088FF"
+		},
+		Keycloak: {
+			icon: SiKeycloak,
+			color: "#0088CE"
+		},
+		"React Native": {
+			icon: SiReact,
+			color: "#61DAFB"
+		},
+		"WCAG AA": {
+			icon: ShieldCheck,
+			color: "#10B981"
+		},
+		"MongoDB Atlas": {
+			icon: SiMongodb,
+			color: "#47A248"
+		},
+		Vite: {
+			icon: SiVite,
+			color: "#646CFF"
+		},
+		TailwindCSS: {
+			icon: SiTailwindcss,
+			color: "#06B6D4"
+		},
+		"Tailwind CSS": {
+			icon: SiTailwindcss,
+			color: "#06B6D4"
+		},
+		"Gemini AI": {
+			icon: SiGooglegemini,
+			color: "#8E75FF"
+		},
+		TensorFlow: {
+			icon: SiTensorflow,
+			color: "#FF6F00"
+		},
+		Keras: {
+			icon: SiKeras,
+			color: "#D00000"
+		},
+		OpenCV: {
+			icon: SiOpencv,
+			color: "#5C3EE8"
+		},
+		Stripe: {
+			icon: SiStripe,
+			color: "#635BFF"
+		},
+		Trello: {
+			icon: SiTrello,
+			color: "#0052CC"
+		}
+	}[name] ?? {
+		icon: CodeXml,
+		color: "#94A3B8"
+	};
+}
+function getRepoIcon(label) {
+	const l = label.toLowerCase();
+	if (l.includes("mobile") || l.includes("app")) return Smartphone;
+	return Github;
+}
 var allTags = ["All", ...Array.from(new Set(projects.flatMap((p) => p.stack)))];
 function Projects() {
 	const [filter, setFilter] = (0, import_react.useState)("All");
@@ -1014,12 +1512,20 @@ function Projects() {
 				whileInView: "show",
 				viewport: viewportOnce,
 				className: "mb-10 flex flex-wrap gap-2",
-				children: allTags.map((tag) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.button, {
-					variants: fadeInUp,
-					onClick: () => setFilter(tag),
-					className: cn("rounded-sm border px-3 py-1.5 font-mono text-[0.7rem] tracking-wide transition-colors", filter === tag ? "border-signal bg-signal/10 text-signal" : "border-border text-muted-foreground hover:border-signal/50 hover:text-foreground"),
-					children: tag
-				}, tag))
+				children: allTags.map((tag) => {
+					const iconInfo = tag !== "All" ? getSkillIcon(tag) : null;
+					const Icon = iconInfo?.icon;
+					return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.button, {
+						variants: fadeInUp,
+						onClick: () => setFilter(tag),
+						className: cn("inline-flex items-center gap-1.5 rounded-sm border px-3 py-1.5 font-mono text-[0.7rem] tracking-wide transition-colors", filter === tag ? "border-signal bg-signal/10 text-signal" : "border-border text-muted-foreground hover:border-signal/50 hover:text-foreground"),
+						children: [Icon ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+							className: "size-3 shrink-0",
+							style: { color: filter === tag ? "currentColor" : iconInfo?.color },
+							"aria-hidden": true
+						}) : null, /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: tag })]
+					}, tag);
+				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
 				layout: true,
@@ -1040,6 +1546,8 @@ function Projects() {
 	});
 }
 function ProjectCard({ project, onOpen }) {
+	const repos = getProjectRepos(project);
+	const liveUrl = getProjectLiveUrl(project);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.article, {
 		layout: true,
 		initial: {
@@ -1096,30 +1604,57 @@ function ProjectCard({ project, onOpen }) {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "mt-6 flex flex-wrap gap-2",
-					children: project.stack.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Chip, {
-						tone: "signal",
-						children: s
-					}, s))
+					children: project.stack.map((s) => {
+						const { icon: Icon, color } = getSkillIcon(s);
+						return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+							style: { "--stack-color": color },
+							className: "group/chip inline-flex items-center gap-1.5 rounded-sm border border-border bg-surface-2/70 px-2.5 py-1 font-mono text-[0.7rem] tracking-wide text-foreground/80 transition-all duration-200 hover:border-[--stack-color] hover:text-[--stack-color] hover:bg-[--stack-color]/5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+								className: "size-3.5 shrink-0 opacity-70 transition-opacity duration-200 group-hover/chip:opacity-100",
+								style: { color: color ?? "currentColor" },
+								"aria-hidden": true
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: s })]
+						}, s);
+					})
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mt-7 flex items-center gap-4",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-						onClick: onOpen,
-						className: "inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-signal uppercase",
-						children: ["Case study", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" })]
-					}), project.repo !== "#" ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-						href: project.repo,
-						target: "_blank",
-						rel: "noreferrer",
-						className: "inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-muted-foreground uppercase hover:text-foreground",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Github, { className: "size-3.5" }), " Code"]
-					}) : null]
+					className: "mt-7 flex flex-wrap items-center gap-4",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+							onClick: onOpen,
+							className: "inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-signal uppercase hover:underline",
+							children: ["Case study", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" })]
+						}),
+						liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: liveUrl,
+							target: "_blank",
+							rel: "noreferrer",
+							className: "inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-signal uppercase hover:text-signal/80 transition-colors",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Globe, { className: "size-3.5" }), " Live"]
+						}),
+						repos.map((r) => {
+							const Icon = getRepoIcon(r.label);
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: r.url,
+								target: "_blank",
+								rel: "noreferrer",
+								className: "inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-muted-foreground uppercase hover:text-foreground transition-colors",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: "size-3.5" }),
+									" ",
+									r.label
+								]
+							}, r.label + r.url);
+						})
+					]
 				})
 			]
 		})]
 	});
 }
 function ProjectModal({ project, onClose }) {
+	const repos = project ? getProjectRepos(project) : [];
+	const liveUrl = project ? getProjectLiveUrl(project) : null;
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, { children: project ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
 		initial: { opacity: 0 },
 		animate: { opacity: 1 },
@@ -1156,12 +1691,38 @@ function ProjectModal({ project, onClose }) {
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 					className: "mt-3 font-display text-3xl font-semibold",
 					children: project.name
-				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-					onClick: onClose,
-					autoFocus: true,
-					"aria-label": "Close case study",
-					className: "rounded-sm border border-border p-2 text-muted-foreground hover:text-foreground",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "size-4" })
+				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-wrap items-center gap-2",
+					children: [
+						liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: liveUrl,
+							target: "_blank",
+							rel: "noreferrer",
+							className: "inline-flex items-center gap-1.5 rounded-sm border border-signal/40 bg-signal/10 px-3 py-1.5 font-mono text-xs text-signal transition-colors hover:bg-signal/20 hover:border-signal",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Globe, { className: "size-3.5" }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Live Demo" }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "size-3" })
+							]
+						}),
+						repos.map((r) => {
+							const Icon = getRepoIcon(r.label);
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: r.url,
+								target: "_blank",
+								rel: "noreferrer",
+								className: "hidden sm:inline-flex items-center gap-1.5 rounded-sm border border-border px-3 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:border-signal/50 hover:text-foreground",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: r.label })]
+							}, r.label + r.url);
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: onClose,
+							autoFocus: true,
+							"aria-label": "Close case study",
+							className: "rounded-sm border border-border p-2 text-muted-foreground hover:text-foreground",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "size-4" })
+						})
+					]
 				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-8 space-y-6",
@@ -1212,10 +1773,58 @@ function ProjectModal({ project, onClose }) {
 							children: "Stack"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 							className: "flex flex-wrap gap-2",
-							children: project.stack.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Chip, {
-								tone: "signal",
-								children: s
-							}, s))
+							children: project.stack.map((s) => {
+								const { icon: Icon, color } = getSkillIcon(s);
+								return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									style: { "--stack-color": color },
+									className: "group/chip inline-flex items-center gap-1.5 rounded-sm border border-border bg-surface-2/70 px-2.5 py-1 font-mono text-[0.7rem] tracking-wide text-foreground/80 transition-all duration-200 hover:border-[--stack-color] hover:text-[--stack-color] hover:bg-[--stack-color]/5",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+										className: "size-3.5 shrink-0 opacity-70 transition-opacity duration-200 group-hover/chip:opacity-100",
+										style: { color: color ?? "currentColor" },
+										"aria-hidden": true
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: s })]
+								}, s);
+							})
+						})]
+					}),
+					liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "grid gap-2 md:grid-cols-[8rem_1fr]",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "label-mono pt-1",
+							children: "Production"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: liveUrl,
+							target: "_blank",
+							rel: "noreferrer",
+							className: "inline-flex items-center gap-2 rounded-sm border border-signal/40 bg-signal/10 px-3 py-1.5 font-mono text-xs text-signal transition-colors hover:bg-signal/20 hover:border-signal",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Globe, { className: "size-3.5" }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: liveUrl }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "size-3" })
+							]
+						}) })]
+					}),
+					repos.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "grid gap-2 md:grid-cols-[8rem_1fr]",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "label-mono pt-1",
+							children: repos.length > 1 ? "Repositories" : "Repository"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "flex flex-wrap gap-2.5",
+							children: repos.map((r) => {
+								const Icon = getRepoIcon(r.label);
+								return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: r.url,
+									target: "_blank",
+									rel: "noreferrer",
+									className: "inline-flex items-center gap-2 rounded-sm border border-border bg-surface/80 px-3 py-1.5 font-mono text-xs text-foreground transition-colors hover:border-signal/60 hover:text-signal",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: "size-3.5" }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: r.label }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "size-3 text-muted-foreground" })
+									]
+								}, r.label + r.url);
+							})
 						})]
 					})
 				]
@@ -1243,12 +1852,25 @@ function Skills() {
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-signal" }), group.title]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "flex flex-wrap gap-2",
-					children: group.items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.span, {
-						variants: chipIn,
-						whileHover: { y: -3 },
-						className: "rounded-sm border border-border bg-background px-3 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:border-signal/60 hover:text-signal",
-						children: item
-					}, item))
+					children: group.items.map((item) => {
+						const { icon: Icon, color } = getSkillIcon(item);
+						return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							style: { "--skill-color": color },
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.span, {
+								variants: chipIn,
+								whileHover: {
+									y: -3,
+									scale: 1.04
+								},
+								className: "group inline-flex items-center gap-2 rounded-sm border border-border bg-background px-3 py-1.5 font-mono text-xs text-muted-foreground transition-all duration-200 hover:border-[--skill-color] hover:text-[--skill-color] hover:bg-[--skill-color]/5",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+									className: "size-3.5 shrink-0 opacity-60 transition-opacity duration-200 group-hover:opacity-100",
+									style: { color: color ?? "currentColor" },
+									"aria-hidden": true
+								}), item]
+							})
+						}, item);
+					})
 				})]
 			}, group.title))
 		})

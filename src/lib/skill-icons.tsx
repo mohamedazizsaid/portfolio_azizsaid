@@ -52,6 +52,18 @@ import {
   SiApachemaven,
   SiIntellijidea,
   SiFigma,
+  SiSocketdotio,
+  SiPolygon,
+  SiGithubactions,
+  SiKeycloak,
+  SiVite,
+  SiTailwindcss,
+  SiGooglegemini,
+  SiTensorflow,
+  SiKeras,
+  SiOpencv,
+  SiStripe,
+  SiTrello,
 } from "react-icons/si";
 import { FaJava, FaAws } from "react-icons/fa";
 import { VscCode, VscAzure } from "react-icons/vsc";
@@ -84,6 +96,7 @@ export function getSkillIcon(name: string): SkillIcon {
     PHP:          { icon: SiPhp,        color: "#777BB4" },
     "C / C++":    { icon: SiCplusplus,  color: "#00599C" },
     Dart:         { icon: SiDart,       color: "#0175C2" },
+    Flutter:      { icon: SiDart,    color: "#02569B" },
     SQL:          { icon: Database,     color: "#00BCF2" },
 
     // ── Frontend ───────────────────────────────────────────────────────────
@@ -150,6 +163,27 @@ export function getSkillIcon(name: string): SkillIcon {
     "Machine Learning":     { icon: Brain,    color: "#EC4899" },
     "AI/ML Integration":    { icon: Sparkles, color: "#A855F7" },
     "AI APIs Integration":  { icon: Sparkles, color: "#A855F7" },
+    "AI/ML":                { icon: Sparkles, color: "#A855F7" },
+    YOLO:                   { icon: Sparkles, color: "#A855F7" },
+    PyTorch:                { icon: Brain, color: "#FF6F00" },
+
+    // ── Additional Project Stack & Tools ──────────────────────────────────
+    WebSocket:             { icon: SiSocketdotio,   color: "#010101" },
+    Blockchain:            { icon: SiPolygon,       color: "#8247E5" },
+    "CI/CD & DevOps":      { icon: SiGithubactions, color: "#2088FF" },
+    Keycloak:              { icon: SiKeycloak,      color: "#0088CE" },
+    "React Native":        { icon: SiReact,         color: "#61DAFB" },
+    "WCAG AA":             { icon: ShieldCheck,     color: "#10B981" },
+    "MongoDB Atlas":       { icon: SiMongodb,       color: "#47A248" },
+    Vite:                  { icon: SiVite,          color: "#646CFF" },
+    TailwindCSS:           { icon: SiTailwindcss,   color: "#06B6D4" },
+    "Tailwind CSS":        { icon: SiTailwindcss,   color: "#06B6D4" },
+    "Gemini AI":           { icon: SiGooglegemini,  color: "#8E75FF" },
+    TensorFlow:            { icon: SiTensorflow,    color: "#FF6F00" },
+    Keras:                 { icon: SiKeras,         color: "#D00000" },
+    OpenCV:                { icon: SiOpencv,        color: "#5C3EE8" },
+    Stripe:                { icon: SiStripe,        color: "#635BFF" },
+    Trello:                { icon: SiTrello,        color: "#0052CC" },
   };
 
   return map[name] ?? { icon: Code2, color: "#94A3B8" };
