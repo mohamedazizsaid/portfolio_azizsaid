@@ -2,7 +2,8 @@ import { useRef } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
 import { experiences } from "@/data/portfolio";
 import { fadeInUp, slideInLeft, staggerContainer, viewportOnce } from "@/lib/motion";
-import { Chip, SectionShell } from "./primitives";
+import { SectionShell } from "./primitives";
+import { TechBadge } from "./Projects";
 
 export function Experience() {
   const ref = useRef<HTMLDivElement>(null);
@@ -50,7 +51,7 @@ export function Experience() {
               </motion.ul>
               <div className="mt-5 flex flex-wrap gap-2">
                 {exp.stack.map((s) => (
-                  <Chip key={s}>{s}</Chip>
+                  <TechBadge key={s} name={s} />
                 ))}
               </div>
             </motion.li>

@@ -29,6 +29,7 @@ export type Project = {
   name: string;
   tagline: string;
   badge?: string;
+  badgeTone?: "muted" | "signal" | "amber" | "purple" | "cyan" | "rose" | "blue" | "emerald";
   problem: string;
   solution: string;
   impact: string;
@@ -149,6 +150,7 @@ export const projects: Project[] = [
     name: "9antra — The Bridge",
     tagline: "Full-stack LMS for Tunisian vocational training centers.",
     badge: "Most immersive UI/UX",
+    badgeTone: "purple",
     year: "2026",
     problem:
       "Vocational training centers had no single system tying together enrollment, payment confirmation, pedagogical validation and credential issuance.",
@@ -170,11 +172,13 @@ export const projects: Project[] = [
     live: "https://9antra-the-bridge-frontend-pdjd-silk.vercel.app",
 
   },
+
   {
     id: "deepskyn",
     name: "DeepSkyn",
     tagline: "AI-powered skin analysis platform with accessibility-first design.",
     badge: "Most complex system architecture",
+    badgeTone: "cyan",
     year: "2026",
     problem:
       "Users lacked an accessible, trustworthy way to get AI-driven skin analysis with real-time guidance, especially across language and ability barriers.",
@@ -197,10 +201,59 @@ export const projects: Project[] = [
     live: "https://deep-skyn-front-end-by-dev-masters.vercel.app",
   },
   {
+  id: "buildwithus",
+  name: "BuildWithUs",
+  tagline:
+    "AI-powered SaaS platform for designing and automating business templates.",
+  badge: "Advanced Microservices",
+  badgeTone: "blue",
+  year: "2026",
+
+  problem:
+    "Businesses need a centralized way to create, personalize and manage templates across multiple communication channels.",
+
+  solution:
+    "A multi-tenant SaaS platform combining a visual template builder, generative AI, semantic data mapping and a scalable microservices architecture.",
+
+  impact:
+    "Simplifies template creation and automation while providing centralized management, AI assistance and multi-channel delivery.",
+
+  highlights: [
+    "Next.js 16 · React 19 · TypeScript · TailwindCSS",
+    "NestJS 11 microservices and Python pipeline with API Gateway",
+    "AI-assisted generation and semantic data mapping",
+    "Email, PDF, SMS, WhatsApp & RCS templates",
+    "PostgreSQL multi-tenancy with RBAC",
+    "DDD · CQRS ",
+    "Stripe billing & subscriptions",
+    "Docker · GitHub Actions · Render · Vercel"
+  ],
+
+  stack: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "NestJS",
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "AI",
+    "Stripe",
+    "Docker",
+    "CI/CD & DevOps",
+    "Vercel",
+    "Render"
+  ],
+  repo:"https://github.com/mohamedazizsaid/BuildWithUS",
+
+  live: "https://build-with-us-xi.vercel.app",
+},
+  {
     id: "formapro",
     name: "FormaPro",
     tagline: "Accessible, AI-powered training management platform built for MaraTech Esprit 2026.",
     badge: "Most accessible platform",
+    badgeTone: "emerald",
     year: "2026",
     problem:
       "Vocational training centers needed a single platform to manage the full training lifecycle — from enrollment to certification — while remaining usable for trainers and learners with different accessibility needs.",
@@ -227,6 +280,7 @@ export const projects: Project[] = [
     tagline: "Computer vision defect detection on the bottle production line.",
     year: "2024",
     badge: "Most industrial application",
+    badgeTone: "amber",
     problem:
       "Manual visual inspection on the bottling line let defective products (broken bottles, damaged caps, misapplied labels) slip through before shipment and scaled poorly with volume.",
     solution:
@@ -245,26 +299,7 @@ export const projects: Project[] = [
       back: "https://github.com/mohamedazizsaid/StopAlgic-Camera-Intelligent",
     },
   },
-  {
-    id: "nutripal",
-    name: "NutriPal",
-    tagline: "AI-assisted nutrition tracking with rule-engine recommendations.",
-    year: "2025",
-    problem:
-      "Generic calorie trackers ignore individual constraints and give no reasoning behind their suggestions.",
-    solution:
-      "An Angular client with SVG circular macro rings and reactive forms on top of a Spring Boot API where a rule engine drives explainable nutrition recommendations, extended by an AI assistant service for personalized planning.",
-    impact:
-      "Users get a daily plan they can act on, with each recommendation traceable to a rule instead of a black box.",
-    highlights: [
-      "SVG circular macro-tracking rings, reactive forms, standalone components",
-      "Spring Boot backend with JWT security and Swagger/OpenAPI docs",
-      "Rule-engine-driven nutrition recommendations",
-      "AI assistant service for personalized planning, budget assistance and anomaly detection",
-    ],
-    stack: ["Angular", "Spring Boot", "AI/ML", "MySQL"],
-    repo: "#",
-  },
+
 
 
   {
@@ -272,6 +307,7 @@ export const projects: Project[] = [
     name: "EduConnect",
     tagline: "AI- and blockchain-powered education management ecosystem.",
     badge: "Most ambitious monorepo",
+    badgeTone: "rose",
     year: "2025",
     problem:
       "Students, teachers, and institutions lacked a unified platform for course management, personalized learning, and certificate credentials that are trustworthy and easy to verify.",
@@ -346,6 +382,8 @@ export const skillGroups: { title: string; items: string[] }[] = [
       "Azure",
       "Vercel",
       "Render",
+      "Prometheus",
+      "Grafana"
     ],
   },
   {

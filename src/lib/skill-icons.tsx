@@ -64,6 +64,9 @@ import {
   SiOpencv,
   SiStripe,
   SiTrello,
+  SiFastapi,
+  SiPrometheus,
+  SiGrafana,
 } from "react-icons/si";
 import { FaJava, FaAws } from "react-icons/fa";
 import { VscCode, VscAzure } from "react-icons/vsc";
@@ -91,6 +94,8 @@ export function getSkillIcon(name: string): SkillIcon {
     // ── Languages ──────────────────────────────────────────────────────────
     Java:         { icon: FaJava,       color: "#ED8B00" },
     Python:       { icon: SiPython,     color: "#3776AB" },
+    FastAPI:      { icon: SiFastapi,    color: "#3776AB" },
+    AI:           { icon: SiGooglegemini, color: "#3776AB" },
     JavaScript:   { icon: SiJavascript, color: "#F7DF1E" },
     TypeScript:   { icon: SiTypescript, color: "#3178C6" },
     PHP:          { icon: SiPhp,        color: "#777BB4" },
@@ -111,13 +116,15 @@ export function getSkillIcon(name: string): SkillIcon {
     "Spring Boot":  { icon: SiSpring,   color: "#6DB33F" },
     "Spring Cloud": { icon: SiSpring,   color: "#6DB33F" },
     Symfony:        { icon: SiSymfony,  color: "#FFFFFF" },
-    Django:         { icon: SiDjango,   color: "#092E20" },
+    Django:         { icon: SiDjango,   color: "#44B78B" },
     Flask:          { icon: SiFlask,    color: "#E2E8F0" },
     "Express.js":   { icon: SiExpress,  color: "#FFFFFF" },
     ".NET":         { icon: SiDotnet,   color: "#512BD4" },
     NestJS:         { icon: SiNestjs,   color: "#E0234E" },
     "REST APIs":    { icon: Server,     color: "#10B981" },
     Microservices:  { icon: Boxes,      color: "#F59E0B" },
+    Teamwork:       { icon: Boxes,     color: "#F59E0B" },
+    Productivity:   { icon: Server,     color: "#E0234E" },
 
     // ── DevOps & Cloud ─────────────────────────────────────────────────────
     Git:          { icon: SiGit,        color: "#F05032" },
@@ -132,6 +139,8 @@ export function getSkillIcon(name: string): SkillIcon {
     Azure:        { icon: VscAzure,     color: "#0089D6" },
     Vercel:       { icon: SiVercel,     color: "#FFFFFF" },
     Render:       { icon: SiRender,     color: "#46E3B7" },
+    Prometheus:   { icon: SiPrometheus, color: "#F35815" },
+    Grafana:      { icon: SiGrafana,    color: "#F35815" },
 
     // ── Databases ──────────────────────────────────────────────────────────
     MySQL:        { icon: SiMysql,      color: "#4479A1" },
@@ -168,7 +177,7 @@ export function getSkillIcon(name: string): SkillIcon {
     PyTorch:                { icon: Brain, color: "#FF6F00" },
 
     // ── Additional Project Stack & Tools ──────────────────────────────────
-    WebSocket:             { icon: SiSocketdotio,   color: "#010101" },
+    WebSocket:             { icon: SiSocketdotio,   color: "#38BDF8" },
     Blockchain:            { icon: SiPolygon,       color: "#8247E5" },
     "CI/CD & DevOps":      { icon: SiGithubactions, color: "#2088FF" },
     Keycloak:              { icon: SiKeycloak,      color: "#0088CE" },
