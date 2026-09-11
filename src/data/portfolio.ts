@@ -81,13 +81,12 @@ export function getProjectLiveUrl(project: Project): string | null {
 export const profile = {
   name: "Mohamed Aziz Said",
   shortName: "MED AZIZ SAID",
-  role: "Full-Stack Engineer · AI & DevOps Enthusiast",
-  status: "Final-year engineering student · ESPRIT",
+  role: "Full-Stack Engineer · AI & DevOps",
+  status: "Final-year Software Engineering Student · ESPRIT",
   valueProp:
-    "I build production-ready software across the stack — combining full-stack engineering, AI-powered experiences, and DevOps practices to turn ideas into reliable products.",
+"I design and build production-ready software across the stack, combining full-stack engineering, AI integration, scalable architectures, and DevOps practices to turn complex ideas into reliable products.",
   about:
-    "I'm a software engineering student at ESPRIT passionate about building modern, reliable, and intelligent applications. I work across Full-Stack development, AI integration, and DevOps, turning ideas into real-world software.",
-  email: "azizsaid.it@gmail.com",
+"I'm a final-year software engineering student at ESPRIT focused on building modern, scalable, and intelligent software. I work across frontend, backend, AI integration, cloud, and DevOps, with hands-on experience designing complete applications from architecture and development to deployment and monitoring.",  email: "azizsaid.it@gmail.com",
   github: "https://github.com/mohamedazizsaid",
   linkedin: "https://www.linkedin.com/in/mohamed-aziz-said-841a3b226",
   resume: "https://drive.google.com/file/d/1im1IpFSciFRmoluKQKmhxAWMtm7ycq1G/view?usp=drive_link", // Drop resume.pdf into /public and point this to /resume.pdf
