@@ -32,25 +32,34 @@ export function Skills() {
 
             <div className="flex flex-wrap gap-2">
               {group.items.map((item) => {
-                const { icon: Icon, color } = getSkillIcon(item);
+                const { icon: Icon, color = "#10B981" } = getSkillIcon(item);
+                const isWhite = color === "#FFFFFF" || color.toLowerCase() === "#fff";
+                const borderColor = isWhite ? "rgba(255, 255, 255, 0.28)" : `${color}40`;
+                const bgColor = isWhite ? "rgba(255, 255, 255, 0.07)" : `${color}12`;
+                const glowColor = isWhite ? "rgba(255, 255, 255, 0.22)" : `${color}38`;
+
                 return (
-                  <span
+                  <motion.span
                     key={item}
-                    style={{ "--skill-color": color } as React.CSSProperties}
+                    variants={chipIn}
+                    whileHover={{ y: -3, scale: 1.05 }}
+                    style={
+                      {
+                        borderColor,
+                        backgroundColor: bgColor,
+                        boxShadow: `0 0 12px -3px ${glowColor}`,
+                        "--skill-color": isWhite ? "#FFFFFF" : color,
+                      } as any
+                    }
+                    className="group inline-flex items-center gap-2 rounded-sm border px-3 py-1.5 font-mono text-xs font-medium text-foreground/90 transition-all duration-200 hover:border-[--skill-color] hover:text-foreground hover:bg-[--skill-color]/18 hover:shadow-[0_0_18px_-2px_var(--skill-color)] cursor-default"
                   >
-                    <motion.span
-                      variants={chipIn}
-                      whileHover={{ y: -3, scale: 1.04 }}
-                      className="group inline-flex items-center gap-2 rounded-sm border border-border bg-background px-3 py-1.5 font-mono text-xs text-muted-foreground transition-all duration-200 hover:border-[--skill-color] hover:text-[--skill-color] hover:bg-[--skill-color]/5"
-                    >
-                      <Icon
-                        className="size-3.5 shrink-0 opacity-60 transition-opacity duration-200 group-hover:opacity-100"
-                        style={{ color: color ?? "currentColor" }}
-                        aria-hidden
-                      />
-                      {item}
-                    </motion.span>
-                  </span>
+                    <Icon
+                      className="size-3.5 shrink-0 transition-transform duration-200 group-hover:scale-110"
+                      style={{ color: isWhite ? "currentColor" : color }}
+                      aria-hidden
+                    />
+                    <span>{item}</span>
+                  </motion.span>
                 );
               })}
             </div>
