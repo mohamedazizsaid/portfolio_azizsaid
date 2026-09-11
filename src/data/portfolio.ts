@@ -327,7 +327,7 @@ export const projects: Project[] = [
 ];
 
 
-export const skillGroups: { title: string; items: string[] }[] = [
+/*export const skillGroups: { title: string; items: string[] }[] = [
   {
     title: "Languages",
     items: [
@@ -428,6 +428,119 @@ export const skillGroups: { title: string; items: string[] }[] = [
     ],
   },
 ];
+*/
+export const skillGroups: { title: string; items: string[] }[] = [
+  {
+    title: "Languages",
+    items: [
+      "Java",
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "PHP",
+      "C / C++",
+      "Dart",
+      "SQL",
+    ],
+  },
+  {
+    title: "Frontend",
+    items: [
+      "Angular",
+      "React",
+      "Next.js",
+      "Vue.js",
+      "Bootstrap",
+      "JavaFX",
+    ],
+  },
+  {
+    title: "Backend & APIs",
+    items: [
+      "Spring Boot",
+      "Spring Cloud",
+      "NestJS",
+      "Django",
+      "Flask",
+      "Symfony",
+      "Express.js",
+      ".NET",
+      "REST APIs",
+    ],
+  },
+  {
+    title: "DevOps & Cloud",
+    items: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Ansible",
+      "Nginx",
+      "SonarQube",
+      "AWS",
+      "Azure",
+      "Vercel",
+      "Render",
+      "Prometheus",
+      "Grafana",
+    ],
+  },
+  {
+    title: "Databases",
+    items: [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Firebase",
+      "Supabase",
+      "TiDB",
+      "SQL",
+      "NoSQL",
+    ],
+  },
+  {
+    title: "Testing & Engineering Tools",
+    items: [
+      "JUnit",
+      "Postman",
+      "JMeter",
+      "Maven",
+      "API Testing",
+      "Performance Testing",
+      "Figma",
+      "VS Code",
+      "IntelliJ IDEA",
+    ],
+  },
+  {
+    title: "Architecture & Engineering",
+    items: [
+      "Microservices",
+      "Clean Architecture",
+      "MVC",
+      "Design Patterns",
+      "Object-Oriented Programming",
+      "Agile",
+      "Scrum",
+    ],
+  },
+  {
+    title: "AI & Machine Learning",
+    items: [
+      "Machine Learning",
+      "AI/ML Integration",
+      "AI API Integration",
+      "Semantic Data Mapping",
+      "AI-Assisted Development",
+    ],
+  },
+];
+
+
+
+
 
 
 export const education = [

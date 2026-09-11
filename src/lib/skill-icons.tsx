@@ -175,6 +175,10 @@ export function getSkillIcon(name: string): SkillIcon {
     "AI/ML":                { icon: Sparkles, color: "#A855F7" },
     YOLO:                   { icon: Sparkles, color: "#A855F7" },
     PyTorch:                { icon: Brain, color: "#FF6F00" },
+"AI API Integration":       { icon: Sparkles, color: "#FF6F00" },
+"Semantic Data Mapping": { icon: Brain, color: "#D00000" },
+"Object-Oriented Programming": { icon: Code2, color: "#A855F7" },
+
 
     // ── Additional Project Stack & Tools ──────────────────────────────────
     WebSocket:             { icon: SiSocketdotio,   color: "#38BDF8" },
