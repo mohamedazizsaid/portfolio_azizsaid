@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail,FileText } from "lucide-react";
 import { toast } from "sonner";
 import { profile } from "@/data/portfolio";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/motion";
@@ -48,6 +48,7 @@ export function Contact() {
               { icon: Mail, label: profile.email, href: `mailto:${profile.email}` },
               { icon: Github, label: "GitHub", href: profile.github },
               { icon: Linkedin, label: "LinkedIn", href: profile.linkedin },
+              { icon: FileText, label: "Resume", href: profile.resume },
             ].map(({ icon: Icon, label, href }) => (
               <motion.a
                 key={label}
