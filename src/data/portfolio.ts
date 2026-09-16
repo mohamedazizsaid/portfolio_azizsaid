@@ -84,12 +84,12 @@ export const profile = {
   role: "Full-Stack Engineer · AI & DevOps",
   status: "Final-year Software Engineering Student · ESPRIT",
   valueProp:
-"I design and build production-ready software across the stack, combining full-stack engineering, AI integration, scalable architectures, and DevOps practices to turn complex ideas into reliable products.",
+    "I design and build production-ready software across the stack, combining full-stack engineering, AI integration, scalable architectures, and DevOps practices to turn complex ideas into reliable products.",
   about:
-"I'm a final-year software engineering student at ESPRIT focused on building modern, scalable, and intelligent software. I work across frontend, backend, AI integration, cloud, and DevOps, with hands-on experience designing complete applications from architecture and development to deployment and monitoring.",  email: "azizsaid.it@gmail.com",
+    "I'm a final-year software engineering student at ESPRIT focused on building modern, scalable, and intelligent software. I work across frontend, backend, AI integration, cloud, and DevOps, with hands-on experience designing complete applications from architecture and development to deployment and monitoring.", email: "azizsaid.it@gmail.com",
   github: "https://github.com/mohamedazizsaid",
   linkedin: "https://www.linkedin.com/in/mohamed-aziz-said-841a3b226",
-  resume: "https://drive.google.com/file/d/1im1IpFSciFRmoluKQKmhxAWMtm7ycq1G/view?usp=drive_link", // Drop resume.pdf into /public and point this to /resume.pdf
+  resume: "https://drive.google.com/file/d/17gnZAxuVdQjfukVEDI6pN-hgkLtiwasU/view?usp=sharing", // Drop resume.pdf into /public and point this to /resume.pdf
   location: "Tunis, Tunisia",
 };
 
@@ -200,53 +200,53 @@ export const projects: Project[] = [
     live: "https://deep-skyn-front-end-by-dev-masters.vercel.app",
   },
   {
-  id: "buildwithus",
-  name: "BuildWithUs",
-  tagline:
-    "AI-powered SaaS platform for designing and automating business templates.",
-  badge: "Advanced Microservices",
-  badgeTone: "blue",
-  year: "2026",
+    id: "buildwithus",
+    name: "BuildWithUs",
+    tagline:
+      "AI-powered SaaS platform for designing and automating business templates.",
+    badge: "Advanced Microservices",
+    badgeTone: "blue",
+    year: "2026",
 
-  problem:
-    "Businesses need a centralized way to create, personalize and manage templates across multiple communication channels.",
+    problem:
+      "Businesses need a centralized way to create, personalize and manage templates across multiple communication channels.",
 
-  solution:
-    "A multi-tenant SaaS platform combining a visual template builder, generative AI, semantic data mapping and a scalable microservices architecture.",
+    solution:
+      "A multi-tenant SaaS platform combining a visual template builder, generative AI, semantic data mapping and a scalable microservices architecture.",
 
-  impact:
-    "Simplifies template creation and automation while providing centralized management, AI assistance and multi-channel delivery.",
+    impact:
+      "Simplifies template creation and automation while providing centralized management, AI assistance and multi-channel delivery.",
 
-  highlights: [
-    "Next.js 16 · React 19 · TypeScript · TailwindCSS",
-    "NestJS 11 microservices and Python pipeline with API Gateway",
-    "AI-assisted generation and semantic data mapping",
-    "Email, PDF, SMS, WhatsApp & RCS templates",
-    "PostgreSQL multi-tenancy with RBAC",
-    "DDD · CQRS ",
-    "Stripe billing & subscriptions",
-    "Docker · GitHub Actions · Render · Vercel"
-  ],
+    highlights: [
+      "Next.js 16 · React 19 · TypeScript · TailwindCSS",
+      "NestJS 11 microservices and Python pipeline with API Gateway",
+      "AI-assisted generation and semantic data mapping",
+      "Email, PDF, SMS, WhatsApp & RCS templates",
+      "PostgreSQL multi-tenancy with RBAC",
+      "DDD · CQRS ",
+      "Stripe billing & subscriptions",
+      "Docker · GitHub Actions · Render · Vercel"
+    ],
 
-  stack: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "NestJS",
-    "Python",
-    "FastAPI",
-    "PostgreSQL",
-    "AI",
-    "Stripe",
-    "Docker",
-    "CI/CD & DevOps",
-    "Vercel",
-    "Render"
-  ],
-  repo:"https://github.com/mohamedazizsaid/BuildWithUS",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "NestJS",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "AI",
+      "Stripe",
+      "Docker",
+      "CI/CD & DevOps",
+      "Vercel",
+      "Render"
+    ],
+    repo: "https://github.com/mohamedazizsaid/BuildWithUS",
 
-  live: "https://build-with-us-xi.vercel.app",
-},
+    live: "https://build-with-us-xi.vercel.app",
+  },
   {
     id: "formapro",
     name: "FormaPro",
@@ -270,8 +270,8 @@ export const projects: Project[] = [
       "Global HTTP audit logging and role-based analytics dashboards (Recharts)",
     ],
     stack: ["NestJS", "MongoDB Atlas", "React", "Vite", "TailwindCSS", "Gemini AI"],
-    repo:"https://github.com/mohamedazizsaid/EspritMaratch2026-devmasters",
-    live:"https://esprit-maratch2026-devmasters.vercel.app/"
+    repo: "https://github.com/mohamedazizsaid/EspritMaratch2026-devmasters",
+    live: "https://esprit-maratch2026-devmasters.vercel.app/"
   },
   {
     id: "quality-detection",
