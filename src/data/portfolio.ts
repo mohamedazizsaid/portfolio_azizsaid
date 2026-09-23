@@ -89,7 +89,7 @@ export const profile = {
     "I'm a final-year software engineering student at ESPRIT focused on building modern, scalable, and intelligent software. I work across frontend, backend, AI integration, cloud, and DevOps, with hands-on experience designing complete applications from architecture and development to deployment and monitoring.", email: "azizsaid.it@gmail.com",
   github: "https://github.com/mohamedazizsaid",
   linkedin: "https://www.linkedin.com/in/mohamed-aziz-said-841a3b226",
-  resume: "https://drive.google.com/file/d/17gnZAxuVdQjfukVEDI6pN-hgkLtiwasU/view?usp=sharing", // Drop resume.pdf into /public and point this to /resume.pdf
+  resume: "https://drive.google.com/file/d/1ffW26sb9zOryqmf-VNKcOLfAG53QvFvc/view?usp=sharing", // Drop resume.pdf into /public and point this to /resume.pdf
   location: "Tunis, Tunisia",
 };
 
