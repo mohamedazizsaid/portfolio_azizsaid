@@ -7,7 +7,7 @@ import { EASE, fadeInUp, staggerContainer } from "@/lib/motion";
 const codeLines = [
   "const engineer = {",
   '  focus: ["full-stack", "distributed systems"],',
-  '  now: "3-month internship @ BEE CODERS",',
+  '  now: "looking for a 6-month PFE internship",',
   '  learning: ["DevOps", "cloud", "AI"],',
   "  shipping: true,",
   "};",
